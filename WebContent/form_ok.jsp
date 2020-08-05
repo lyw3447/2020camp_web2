@@ -8,10 +8,10 @@
 </head>
 <body>
 
-    <jsp:useBean id="hob" class="com.example.Dynamic" />
-    <jsp:setProperty property="*" name="hob" />
+    <jsp:useBean id="member" class="com.example.Dynamic" />
+    <jsp:setProperty property="*" name="member" />
     <%
-        request.setAttribute("hob", hob);
+        request.setAttribute("member", member);
     %>
     <h3>Your hobbies are</h3>
 
