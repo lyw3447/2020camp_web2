@@ -1,0 +1,86 @@
+There are many JSP action tags or elements. 
+Each JSP action tag is used to perform some specific tasks.
+
+The action tags are used to control the flow between pages and to use Java Bean. 
+The Jsp action tags are given below.
+
+jsp:forward	 forwards the request and response to another resource.
+jsp:include	 includes another resource.
+jsp:useBean	 creates or locates bean object.
+jsp:setProperty	 sets the value of property in bean object.
+jsp:getProperty	 prints the value of property of the bean.
+jsp:plugin	 embeds another components such as applet.
+jsp:param	 sets the parameter value. It is used in forward and include mostly.
+jsp:fallback	 can be used to print the message if plugin is working. It is used in jsp:plugin.
+
+
+
+
+
+//Syntax of jsp:forward action tag without parameter
+<jsp:forward page="relativeURL | <%= expression %>" />  
+
+
+//Syntax of jsp:forward action tag with parameter
+<jsp:forward page="relativeURL | <%= expression %>">  
+<jsp:param name="parametername" value="parametervalue | <%=expression%>" />  
+</jsp:forward>  
+
+
+
+
+//jsp:include action tag
+
+The jsp:include action tag is used to include the content of another resource it may be jsp, html or servlet.
+
+The jsp include action tag includes the resource at request time so it is better for dynamic pages because there might be changes in future.
+
+
+
+//Syntax of jsp:include action tag without parameter
+<jsp:include page="relativeURL | <%= expression %>" />  
+
+
+//Syntax of jsp:include action tag with parameter
+<jsp:include page="relativeURL | <%= expression %>">  
+<jsp:param name="parametername" value="parametervalue | <%=expression%>" />  
+</jsp:include>  
+
+
+
+
+
+//java bean
+
+//Simple example of JavaBean class
+//Employee.java  
+  
+package mypack;  
+public class Employee implements java.io.Serializable{  
+private int id;  
+private String name;  
+public Employee(){}  
+public void setId(int id){this.id=id;}  
+public int getId(){return id;}  
+public void setName(String name){this.name=name;}  
+public String getName(){return name;}  
+}  
+
+
+
+
+//Syntax of jsp:setProperty action tag
+<jsp:setProperty name="instanceOfBean" property= "*"   |   
+property="propertyName" param="parameterName"  |   
+property="propertyName" value="{ string | <%= expression %>}"   
+/>  
+
+
+//Example of jsp:setProperty action tag if you have to set all the values of incoming request in the bean
+<jsp:setProperty name="bean" property="*" />  
+
+//Example of jsp:setProperty action tag if you have to set value of the incoming specific property
+<jsp:setProperty name="bean" property="username" />   
+
+//Example of jsp:setProperty action tag if you have to set a specific value in the property
+<jsp:setProperty name="bean" property="username" value="Kumar" /
